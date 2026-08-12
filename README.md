@@ -133,9 +133,8 @@ Instead of storing independent copies of the website on each EC2 instance, multi
 
 ```text
 EC2 Server 1 ──┐
-               ├── Amazon EFS
-EC2 Server 2 ──┘
-```
+EC2 Server 2 ──┼── Amazon EFS
+EC2 Server 3 ──┘
 
 This is particularly useful when new instances are created through Auto Scaling.
 
