@@ -1,10 +1,15 @@
 # BFitHub – Highly Available AWS Infrastructure
 
-**Project Owner:** Bisola Adebola
-**Cloud Platform:** Amazon Web Services (AWS)
-**Operating System:** Ubuntu Linux
-**Application:** `app.bfithub.store`
-**Project Type:** Hands-on Cloud Infrastructure Deployment
+A hands-on AWS cloud infrastructure project demonstrating high availability, scalability, security, shared storage, monitoring, alerting, and Linux administration.
+
+---
+
+**Project Owner:** Bisola Adebola  
+**Cloud Platform:** Amazon Web Services (AWS)  
+**Operating System:** Ubuntu Linux  
+**Application:** `app.bfithub.store`  
+**Project Type:** Hands-on Cloud Infrastructure Deployment  
+
 
 ---
 
