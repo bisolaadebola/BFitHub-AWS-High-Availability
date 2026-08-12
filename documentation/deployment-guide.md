@@ -1,12 +1,13 @@
-# BFitHub – Highly Available AWS Infrastructure Deployment Guide
+# BFitHub – Highly Available Web Application on AWS
 
 ## Project Information
 
-**Project Owner:** Bisola Adebola
-**Cloud Platform:** Amazon Web Services (AWS)
-**Operating System:** Ubuntu Linux
-**Application Domain:** `app.bfithub.store`
-**Architecture:** Highly Available Web Infrastructure
+**Project Owner:** Bisola Adebola  
+**Project Type:** Hands-on Cloud Infrastructure Deployment  
+**Cloud Platform:** Amazon Web Services (AWS)  
+**Operating System:** Ubuntu Linux  
+**Application Domain:** `app.bfithub.store`  
+**Project Focus:** High Availability, Scalability, Security, Shared Storage, Monitoring & Alerting
 
 ---
 
@@ -481,35 +482,47 @@ Slack notifications were tested to confirm that alerts could reach the configure
 
 The completed request flow can be summarized as:
 
-```text
-                    Internet
-                       │
-                       ▼
-                  DNS / HTTPS
-                       │
-                       ▼
-             Application Load Balancer
-                       │
-                ┌──────┴──────┐
-                ▼             ▼
-             EC2 Web       EC2 Web
-              Server        Server
-                │             │
-                └──────┬──────┘
-                       ▼
-                   Amazon EFS
 
-            Auto Scaling manages EC2
-                       │
-                       ▼
-                   Datadog
-                       │
-                       ▼
-                     Slack
+                  🏗️ Architecture Flow
+
+
+                         Internet
+                            │
+                            ▼
+                      Route 53 DNS
+                            │
+                            ▼
+                      HTTPS / SSL
+                 AWS Certificate Manager
+                            │
+                            ▼
+                Application Load Balancer
+                            │
+              ┌─────────────┼─────────────┐
+              ▼             ▼             ▼
+          EC2 Web        EC2 Web        EC2 Web
+           Server         Server         Server
+              │             │             │
+              └─────────────┼─────────────┘
+                            │
+                            ▼
+                       Amazon EFS
+                    (Shared Storage)
+
+                  Auto Scaling Group
+                 manages EC2 instances
+                   ↙       ↓       ↘
+                 EC2      EC2      EC2
+
+                 Monitoring & Alerting
+                         │
+                         ▼
+                      Datadog
+                         │
+                         ▼
+                       Slack
+                  (Alert Notifications)
 ```
-
----
-
 # Deployment Outcome
 
 The completed infrastructure demonstrates the integration of networking, compute, storage, security, load balancing, scaling, DNS, HTTPS, monitoring, alerting, and Linux administration within a single AWS project.
