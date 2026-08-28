@@ -1,0 +1,42 @@
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&amp;display=swap');
+      .wordmark { font-family: 'Poppins', 'Arial Black', Arial, sans-serif; font-weight: 800; letter-spacing: -1.5px; }
+    </style>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5A36"/>
+      <stop offset="100%" stop-color="#00C2A8"/>
+    </linearGradient>
+    <linearGradient id="nodeGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5A36"/>
+      <stop offset="100%" stop-color="#FF8659"/>
+    </linearGradient>
+    <linearGradient id="nodeGradB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C2A8"/>
+      <stop offset="100%" stop-color="#00E0C0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon: a pulse line that also acts as a hub connecting nodes -->
+  <g transform="translate(10,10)">
+    <!-- connecting pulse path -->
+    <path d="M 8 100 L 45 100 L 62 55 L 82 140 L 100 78 L 118 100 L 158 100"
+          fill="none" stroke="url(#pulseGrad)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- hub nodes riding the pulse -->
+    <circle cx="8" cy="100" r="9" fill="#14213D"/>
+    <circle cx="62" cy="55" r="10" fill="url(#nodeGradA)"/>
+    <circle cx="100" cy="78" r="10" fill="url(#nodeGradB)"/>
+    <circle cx="158" cy="100" r="9" fill="#14213D"/>
+
+    <!-- thin ring around the whole mark to read as a single hub unit -->
+    <circle cx="83" cy="97" r="94" fill="none" stroke="#14213D" stroke-width="3" opacity="0.08"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="215" y="127" class="wordmark" font-size="72">
+    <tspan fill="#14213D">bfit</tspan><tspan fill="#FF5A36">hub</tspan>
+  </text>
+</svg>
